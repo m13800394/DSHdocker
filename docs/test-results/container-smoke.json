@@ -1,0 +1,27 @@
+{
+  "time_utc": "2026-10-26T03:39:44.436655+00:00",
+  "release_id": "0.1.0-20261026t033909z-872b49334d71",
+  "checks": {
+    "main_web": {
+      "authenticated_http_status": 200,
+      "anonymous_http_status": 401,
+      "script_assets_checked": 2
+    },
+    "harness_version": "0.2.1-rc.3",
+    "native_terminal": "passed",
+    "second_web": {
+      "authenticated_http_status": 200,
+      "anonymous_http_status": 401,
+      "script_assets_checked": 2
+    },
+    "state_and_workspace_isolation": "passed",
+    "state_and_workspace_survive_recreation": "passed",
+    "recreated_web": {
+      "authenticated_http_status": 200,
+      "anonymous_http_status": 401,
+      "script_assets_checked": 2
+    },
+    "exact_image_nonroot_readonly_loopback": "passed"
+  },
+  "status": "passed"
+}

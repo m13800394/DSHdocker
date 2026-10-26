@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "release_id": "0.1.0-20261026t033909z-872b49334d71",
+  "version": "0.1.0",
+  "created_at_utc": "2026-10-26T03:39:12.206486+00:00",
+  "image_tag": "mri-deepseek-harness:0.1.0-20261026t033909z-872b49334d71",
+  "image_id": "sha256:96426df398a0927456a27f4d113944b1f7426785acf474ae6a7b75bf7d33c75a",
+  "platform": "linux/amd64",
+  "repo_digests": [],
+  "source_sha256": "0a32a0f474390644b8281eb825eef156e9e214b628670c7d97e830d1d88ce043",
+  "source_files": {
+    ".dockerignore": "b1416cfee92f1178fafd3d7aa1b5eb1fd11cd144eb1cd26a892e9c01e542928a",
+    "Dockerfile": "72801966644d5dceddd52257b601ba52341df6fc256dcd104d1ab4a56df49d61",
+    "VERSION": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+    "container/address.mjs": "ebb35277d12440ee54516c06c01943941b55f3289f3d75e770e94a82d647264f",
+    "container/healthcheck.mjs": "f7509cd002eea8ea00dc7c5619c1fea41a2703ebd0c7932d2a1bfa6c6a7ae920",
+    "container/local.patch.yml": "75c6265f7d68b974fd922b56903ebfa9aada3ff7b86244af02f21beb3135e9a5",
+    "container/start.mjs": "fd22ce27a02c46d58227db4d379ad502d1b1aa5e5f6edd1b374435bfeda48d0d",
+    "deploy.ps1": "ee9b23381944328fbdfc177cd85920346c52840743130ea8b7989e6cdf0e180a",
+    "deploy.sh": "ed055e32b0a96c46fd03abed8fdead9f0211fb9e49b4df1a5020c38921b875cc",
+    "runtime/package-lock.json": "225dd1993e629e56236138c21f7420ccf058124c67dd3e0865de514890b52261",
+    "runtime/package.json": "51afb3be0aa9d1208e1904d156771aff5bee4806e534c1b8583e5ee76ad5b02d",
+    "scripts/deploy.py": "a0aedd8984579232b421f4d5b5caadf99328d96c451320e47e78397bbcb76dad",
+    "upstream.json": "f22a4f77b5a0c472ffeb96438acb7b927b8c0b48a20ac9a165cbcf9196c86fef"
+  },
+  "source_archive_sha256": "2e4eed0c88006ebb6d75065bf5e722bfa79934ef9dea6aed1532cc462bbe9bc2",
+  "packaging_git_commit": "b58b660129f4937e8fb586fe2a937ef06793148c",
+  "upstream": {
+    "repository": "https://github.com/deepseek-ai/deepseek-harness",
+    "reviewed_commit": "22ddee3792402c3e70ec5f86a63c3e3e895a2f60",
+    "package": "@deepseek-ai/dsh",
+    "package_version": "0.2.1-rc.3",
+    "package_integrity": "sha512-H+E9HLnHf7fJqzen84Z9Bq8ggb5xbrcbyhZjXTJLE9NabHr3zteGvTRvdvGkxPl4ov80is4WLglFmSo+/olJjg==",
+    "note": "reviewed_commit identifies the source inspected for packaging; npm metadata did not provide gitHead, so it is not asserted to be the published package's build commit."
+  }
+}

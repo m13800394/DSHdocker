@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/deepseek-ai/deepseek-harness",
+  "reviewed_commit": "22ddee3792402c3e70ec5f86a63c3e3e895a2f60",
+  "package": "@deepseek-ai/dsh",
+  "package_version": "0.2.1-rc.3",
+  "package_integrity": "sha512-H+E9HLnHf7fJqzen84Z9Bq8ggb5xbrcbyhZjXTJLE9NabHr3zteGvTRvdvGkxPl4ov80is4WLglFmSo+/olJjg==",
+  "note": "reviewed_commit identifies the source inspected for packaging; npm metadata did not provide gitHead, so it is not asserted to be the published package's build commit."
+}

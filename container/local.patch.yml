@@ -1,0 +1,6 @@
+# Local deployment: disable upstream session export; model access is configured later.
+- id: session-log-deepseek
+  config:
+    enabled: false
+- id: session-telemetry-otel
+  disabled: true

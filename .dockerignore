@@ -1,0 +1,8 @@
+**
+!runtime/
+!runtime/package.json
+!runtime/package-lock.json
+!container/
+!container/**
+!upstream.json
+!VERSION

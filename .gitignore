@@ -1,0 +1,26 @@
+# Local credentials and environment
+.env
+.env.*
+!.env.example
+secrets/
+*.key
+
+# Runtime state and generated output
+data/
+logs/
+*.log
+dist/
+build/
+
+# Development caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+.cache/
+instances/
+releases/
+exports/
+.DS_Store
+Thumbs.db

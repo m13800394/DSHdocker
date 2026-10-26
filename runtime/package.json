@@ -1,0 +1,9 @@
+{
+  "name": "mri-harness-container-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pinned upstream DeepSeek Harness distribution for container packaging",
+  "dependencies": {
+    "@deepseek-ai/dsh": "0.2.1-rc.3"
+  }
+}

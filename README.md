@@ -16,9 +16,12 @@
 Windows PowerShell，在本项目目录执行：
 
 ```powershell
+py -3 scripts\deploy.py up
+```
+或者
+```powershell
 .\deploy.ps1 up
 ```
-
 Linux：
 
 ```sh
@@ -27,7 +30,7 @@ sh deploy.sh up
 
 启动后访问 http://127.0.0.1:3080 。当前构建目标是 `linux/amd64`。无须模型、API 密钥或远程桌面配置即可启动 Web UI；模型对话需要后续配置模型服务。
 
-首次打开使用 `.\deploy.ps1 open`，脚本会在浏览器中完成登录链接跳转。未登录时直接访问根地址返回 401，属于预期认证行为。
+首次打开使用`py -3 scripts\deploy.py` 或者 `.\deploy.ps1 open`，脚本会在浏览器中完成登录链接跳转。未登录时直接访问根地址返回 401，属于预期认证行为。
 
 另建一个独立实例：
 

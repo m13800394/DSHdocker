@@ -18,27 +18,84 @@ Windows PowerShell，在本项目目录执行：
 ```powershell
 py -3 scripts\deploy.py up
 ```
-或者
+
+如果 PowerShell 允许执行脚本，也可以使用：
+
 ```powershell
 .\deploy.ps1 up
 ```
+
 Linux：
 
 ```sh
 sh deploy.sh up
 ```
 
-启动后访问 http://127.0.0.1:3080 。当前构建目标是 `linux/amd64`。无须模型、API 密钥或远程桌面配置即可启动 Web UI；模型对话需要后续配置模型服务。
-
-首次打开使用`py -3 scripts\deploy.py` 或者 `.\deploy.ps1 open`，脚本会在浏览器中完成登录链接跳转。未登录时直接访问根地址返回 401，属于预期认证行为。
-
-另建一个独立实例：
+首次打开运行：
 
 ```powershell
-.\deploy.ps1 up --agent manager --port 3081
+py -3 scripts\deploy.py open
 ```
 
-这会创建独立容器、网络和数据卷。实例名称 `manager` 本身不赋予管理能力；专家提示词和跨容器协作尚未实现。上游 Web UI 允许多个会话和内部子智能体，本阶段的隔离单位是一个独立 harness 部署实例，尚未强制限制为一个模型会话。
+等价入口为 `.\deploy.ps1 open`。脚本会在浏览器中完成登录链接跳转。未登录时直接访问根地址返回 401，属于预期认证行为。首次启动后可访问 http://127.0.0.1:3080 。
+
+## 配置多个 Harness 实例
+
+默认实例名是 `mri-operator`，默认端口是 `3080`。使用不同的 `--agent` 名称和未占用的 `--port`，即可创建多个独立实例。以下 Windows 命令均在本项目目录执行。
+
+### 创建并打开实例
+
+保留当前实例，再创建名为 `manager` 和 `expert` 的实例：
+
+```powershell
+py -3 scripts\deploy.py up --agent manager --port 3081
+py -3 scripts\deploy.py up --agent expert --port 3082
+```
+
+每条命令成功返回并显示 `Agent ... is ready` 后，再打开对应实例：
+
+```powershell
+py -3 scripts\deploy.py open --agent mri-operator
+py -3 scripts\deploy.py open --agent manager
+py -3 scripts\deploy.py open --agent expert
+```
+
+| 实例名 | 本机访问地址 | 用途说明 |
+| --- | --- | --- |
+| `mri-operator` | http://127.0.0.1:3080 | 默认的通用 Harness 实例 |
+| `manager` | http://127.0.0.1:3081 | 可后续配置为 Manager |
+| `expert` | http://127.0.0.1:3082 | 可后续配置为 Expert |
+
+访问需要登录；请使用对应的 `open --agent <实例名>` 命令。`url --agent <实例名>` 可以输出登录链接，链接含登录凭据，请勿公开。
+
+实例名必须以小写字母开头，只能包含小写字母、数字和连字符，最长 40 个字符。端口范围为 `1024` 至 `65535`；同一台电脑上的实例需要使用不同的可用端口。
+
+### 管理指定实例
+
+以下命令以 `manager` 为例：
+
+```powershell
+# 查看运行状态和健康状态
+py -3 scripts\deploy.py status --agent manager
+
+# 查看最近 100 行日志
+py -3 scripts\deploy.py logs --agent manager
+
+# 停止并移除该实例的容器和网络，保留数据卷
+py -3 scripts\deploy.py stop --agent manager
+
+# 重新启动，沿用该实例最近成功部署的版本和端口
+py -3 scripts\deploy.py up --agent manager
+```
+
+省略 `--agent` 时，操作对象始终是默认实例 `mri-operator`。管理其他实例时，每次都要指定对应名称。
+
+Linux 使用相同参数，将命令前缀替换为 `sh deploy.sh`，例如：
+
+```sh
+sh deploy.sh up --agent manager --port 3081
+sh deploy.sh status --agent manager
+```
 
 ## 版本管理
 

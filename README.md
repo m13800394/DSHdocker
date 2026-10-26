@@ -1,6 +1,6 @@
-# DeepSeek harness 容器化项目
+# DeepSeek harness 容器化
 
-将官方 `@deepseek-ai/dsh@0.2.1-rc.3` 封装为独立 Docker 容器，先在 Windows 的 Docker Desktop 上验证，再将相同镜像交付 Linux 服务器。此阶段交付通用 harness 运行环境；模型服务、MRI 操作插件、远程桌面和 manager 编排后续接入。
+将官方 `@deepseek-ai/dsh@0.2.1-rc.3` 封装为独立 Docker 容器。
 
 ## 交付目标
 
@@ -60,5 +60,3 @@ sh deploy.sh up
 - [学习与操作记录](docs/learning-log.md)
 - [部署与版本管理](docs/deployment.md)
 - [MRI 项目与封装的关系](docs/architecture.md)
-
-真实 API 密钥不写入文档、Git 或镜像。后续通过本机配置注入。
